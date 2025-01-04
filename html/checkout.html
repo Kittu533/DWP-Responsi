@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/checkout.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-checkout">
+        <a href="../html/detail.html">
+          <img src="../src/assets/images/back-svgrepo-com.svg" alt=""
+        /></a>
+        <h1 class="title">Invest In Yourself</h1>
+      </div>
+
+      <div class="checkout-summary">
+        <div class="details">
+          <div class="image-container">
+            <img
+              src="../src/assets/images/Group 2.png"
+              alt="Design Sprint Workshop"
+              class="image"
+            />
+          </div>
+          <div class="info">
+            <h2 class="subtitle">
+              Start Your Design Career With Design Sprint
+            </h2>
+            <ul class="info-list">
+              <li><span class="icon">📍</span> Gowork Bandung</li>
+              <li><span class="icon">⏰</span> 15:00 PM WIB</li>
+              <li><span class="icon">📅</span> 22 Agustus 2022</li>
+            </ul>
+          </div>
+        </div>
+        <div class="total">
+          <div class="total-label">Total:</div>
+          <div class="total-amount">$2,980</div>
+        </div>
+      </div>
+
+      <form class="form">
+        <section class="form-section">
+          <div class="section-header">
+            <div class="step">01</div>
+            <h2 class="section-title">Personal Details</h2>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="Ryobi" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Surya Atmaja" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="ryobisuryaatmaja@kitangoding.com" />
+            </div>
+            <div class="form-group">
+              <label for="role">Role</label>
+              <input type="text" id="role" placeholder="Product Designer" />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <div class="section-header">
+            <div class="step">02</div>
+            <h2 class="section-title">Payment Method</h2>
+          </div>
+          <div class="payment-methods">
+            <div class="payment-option">
+              <input type="radio" id="card" name="paymentMethod" value="card" />
+              <label for="card">
+                <div class="payment-label">
+                  <span class="payment-text">E-Wallet</span>
+                </div>
+              </label>
+            </div>
+            <div class="payment-option">
+              <input
+                type="radio"
+                id="sewallet"
+                name="paymentMethod"
+                value="sewallet"
+              />
+              <label for="sewallet">
+                <div class="payment-label">
+                  <span class="payment-text">KitaNgoding Payment</span>
+                  <span class="balance">Balance: $50,000</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Pay Now</button>
+      </form>
+      <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+          <h2>Thank You!</h2>
+          <p>
+            You will be redirected to the home page in
+            <span id="countdown">2</span> seconds...
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="../src/js/scripts.js">
+    </script>
+  </body>
+</html>

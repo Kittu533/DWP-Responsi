@@ -1,0 +1,252 @@
+:root {
+  --light: #f7f7f7;
+  --dark: #222222;
+  --background-2: #f5f7f9;
+  --homeBackground: #151a26;
+  --gray: #a3a5aa;
+  --gap-primary: 16px;
+  --gap-secondary: 8px;
+  --highlight-color: #01fb34;
+  --gradient-color-2: #00a0f5;
+  --gradient-color-3: rgb(243, 47, 184);
+  --soft-navy: #252837;
+}
+
+.detail-hero {
+  background-color: var(--homeBackground);
+  height: 100vh;
+}
+
+.img-detail-hero {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 32px;
+}
+
+.detail-hero-title {
+  text-align: start;
+  padding-top: 32px;
+  color: var(--light);
+  font-size: 32px;
+  font-weight: 600;
+  margin: auto;
+  width: 80%;
+}
+
+.py-16 {
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 4rem;
+  margin-left: 120px;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text-gray {
+  color: #6b7280;
+}
+
+.keypoints {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.keypoints li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #6b7280;
+}
+
+.check-icon {
+  margin-right: 1rem;
+  color: #00d86d;
+  font-weight: bold;
+}
+
+.bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #000;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.map-placeholder {
+  background-color: #f3f4f6;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  color: #6b7280;
+}
+
+.speaker-card {
+  position: relative;
+  margin-top: -16rem;
+}
+
+.card-card-content {
+  background-color: white;
+  padding: 1.5rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 2rem;
+}
+
+.speaker-info {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.speaker-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.text-gray-small {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.speaker-name {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.divider {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+.ticket-info {
+  text-align: start;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.price-note {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.event-item {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.join-btn {
+  width: 100%;
+  background-color: #00d86d;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #00c75f;
+}
+
+/* Responsive styles for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-left: 0;
+  }
+
+  .detail-hero-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .img-detail-hero {
+    width: 100%;
+    padding-top: 16px;
+  }
+
+  .speaker-card {
+    margin-top: 2rem;
+  }
+
+  .card-card-content {
+    position: static;
+    top: 0;
+    padding: 1.5rem;
+  }
+}
+
+/* Responsive styles for mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .detail-hero {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .detail-hero-title {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .join-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.stats-container .stat-item {
+  transform: translate3d(
+    0,
+    0,
+    0
+  ); /* Mencegah transformasi animasi memengaruhi layout */
+  will-change: auto;
+}

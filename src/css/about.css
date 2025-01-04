@@ -1,0 +1,370 @@
+:root {
+  --primary-color: #4b0082;
+  --secondary-color: #01fb34;
+  --background-color: #151a26;
+  --text-color: #333;
+  --light-bg: #f5f7f9;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+  --light: #f7f7f7;
+  --dark: #222222;
+  --background-2: #f5f7f9;
+  --homeBackground: #151a26;
+  --gray: #a3a5aa;
+  --gap-primary: 16px;
+  --gap-secondary: 8px;
+  --highlight-color: #01fb34;
+  --gradient-color-2: #00a0f5;
+  --gradient-color-3: rgb(243, 47, 184);
+  --soft-navy: #252837;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white);
+}
+
+header {
+  width: 100%;
+  height: 12vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--homeBackground);
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 0 20px;
+  width: 90%; /* Menggunakan lebar relatif untuk responsivitas */
+  max-width: 1200px; /* Membatasi lebar maksimal untuk desktop */
+  margin: 0 auto; /* Memastikan navbar tetap terpusat */
+}
+
+.navbar h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-decoration: none;
+  gap: 48px;
+  font-size: 18px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--light);
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-menu > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transition: width 300ms ease-in-out;
+}
+
+.nav-menu > li > a:hover::after {
+  width: 100%;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--dark);
+  background-color: var(--highlight-color);
+}
+
+.btn-nav {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background-color: var(--soft-navy);
+  color: var(--light);
+}
+.btn-nav:hover {
+  background-color: var(--dark);
+}
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .navbar ul {
+    display: none;
+  }
+
+  .btn {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar ul {
+    display: none;
+  }
+}
+
+/* Hero Section */
+.header {
+  background-color: var(--background-color);
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--secondary-color), #00a0f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.intro-text {
+  margin: 3rem 0;
+  font-size: 1.1rem;
+}
+
+.platform-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem 0;
+  color: var(--primary-color);
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-box {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* Contact Section */
+.contact-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.contact-info {
+  padding: 2rem;
+  background: var(--light-bg);
+  border-radius: 10px;
+}
+
+.contact-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  margin: 1rem 0;
+}
+
+.map {
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Footer */
+.footer {
+  background: var(--light-bg);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-menu {
+    margin: 1rem 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .features,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    height: 300px;
+  }
+}
+
+/* Button Styles */
+
+
+#footer {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+#footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Footer content sections */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.footer-content > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff8c00; /* Highlighted color */
+}
+
+.footer-logo p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-link h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff8c00;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-link ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link ul li {
+  margin-bottom: 10px;
+}
+
+.footer-link ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.footer-link ul li a:hover {
+  color: #ff8c00;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content > div {
+    text-align: center;
+  }
+}
+
+/* end footer */

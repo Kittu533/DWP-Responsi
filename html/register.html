@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../src/css/login.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <title>KITA NGODING-ACADEMY</title>
+    <style>
+      #message {
+        display: none;
+        background: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        width: 300px;
+      }
+
+      #message p {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      #message p.valid {
+        color: #28a745; /* Hijau */
+      }
+
+      #message p.invalid {
+        color: #dc3545; /* Merah */
+      }
+
+      #message p::before {
+        content: "❌";
+        margin-right: 10px;
+        color: #dc3545;
+      }
+
+      #message p.valid::before {
+        content: "✔️";
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <img
+            src="../src/assets/images/KN (1).png"
+            style="width: 150px"
+            alt=""
+          />
+          <ul class="nav-menu">
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/course.html">Browse</a></li>
+            <li><a href="../html/about.html">About</a></li>
+          </ul>
+          <a href="../html/login.html" class="btn btn-nav">Login</a>
+        </div>
+      </div>
+    </header>
+    <section id="login-page">
+      <div class="container">
+        <div class="login">
+          <h1>Register</h1>
+          <div class="login-container">
+            <form class="register-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Angga"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="anggaform@bwa.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="081234567890"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Password must contain at least one number, one uppercase, one lowercase letter, and at least 8 or more characters"
+                  required
+                />
+                <div id="message">
+                  <h3>Password must contain the following:</h3>
+                  <p id="letter" class="invalid">A <b> lowercase</b> letter</p>
+                  <p id="capital" class="invalid">A <b> capital</b> letter</p>
+                  <p id="number" class="invalid">A <b> number</b></p>
+                  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  required
+                />
+              </div>
+              <a href="/html/index.html"><button type="submit" class="sign-in-btn">Register</button></a>
+              <a href="/html/login.html"
+                ><button type="button" class="create-account-btn">
+                  Login exist account
+                </button></a
+              >
+            </form>
+          </div>
+          <div class="companies-section">
+            <img
+              src="../src/assets/images/home-global-companies.png"
+              style="width: 50%"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      var myInput = document.getElementById("password");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var number = document.getElementById("number");
+      var length = document.getElementById("length");
+
+      // Show message box when input is focused
+      myInput.onfocus = function () {
+        document.getElementById("message").style.display = "block";
+      };
+
+      // Hide message box when input is blurred
+      myInput.onblur = function () {
+        document.getElementById("message").style.display = "none";
+      };
+
+      // Validate password on keyup
+      myInput.onkeyup = function () {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+          letter.classList.remove("invalid");
+          letter.classList.add("valid");
+        } else {
+          letter.classList.remove("valid");
+          letter.classList.add("invalid");
+        }
+
+        // Validate uppercase letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+          capital.classList.remove("invalid");
+          capital.classList.add("valid");
+        } else {
+          capital.classList.remove("valid");
+          capital.classList.add("invalid");
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+          number.classList.remove("invalid");
+          number.classList.add("valid");
+        } else {
+          number.classList.remove("valid");
+          number.classList.add("invalid");
+        }
+
+        // Validate length
+        if (myInput.value.length >= 8) {
+          length.classList.remove("invalid");
+          length.classList.add("valid");
+        } else {
+          length.classList.remove("valid");
+          length.classList.add("invalid");
+        }
+      };
+    </script>
+  </body>
+</html>
